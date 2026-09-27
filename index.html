@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SERPgpt.pro – AI-Powered Keyword Explorer</title>
+  <meta name="description" content="SERPgpt.pro sifts through millions of search queries to extract high-volume, low-competition keywords in seconds for content creators and marketers." />
+  
+  <!-- Canonical & OpenGraph Metadata -->
+  <link rel="canonical" href="https://serpgpt.pro/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="SERPgpt.pro – AI-Powered Keyword Explorer" />
+  <meta property="og:description" content="SERPgpt.pro sifts through millions of search queries to extract high-volume, low-competition keywords in seconds for content creators and marketers." />
+  <meta property="og:url" content="https://serpgpt.pro/" />
+  <meta property="og:site_name" content="SERPgpt.pro" />
+  
+  <!-- Twitter Card Metadata -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="SERPgpt.pro – AI-Powered Keyword Explorer" />
+  <meta name="twitter:description" content="SERPgpt.pro sifts through millions of search queries to extract high-volume, low-competition keywords in seconds for content creators and marketers." />
+  
+  <!-- Schema.org Structured Data for Google OAuth Brand Verification -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "SERPgpt.pro",
+    "url": "https://serpgpt.pro",
+    "description": "AI-Powered Keyword Explorer that finds high-volume, low-competition search niches for content creators and marketers.",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "All",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+
+  <!-- Tailwind CSS bundled by Vite without unsafe window.fetch mutation -->
+  <link rel="stylesheet" href="/src/index.css" />
+  <style>
+    /* Custom Scrollbar & Subdued Dark Accents */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #090d16;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1e293b;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #334155;
+    }
+  </style>
+</head>
+<body class="bg-[#090d16] text-slate-100 min-h-screen flex flex-col font-sans selection:bg-indigo-500/30 selection:text-indigo-200 antialiased">
+
+  <!-- Background Ambient Glow -->
+  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
+    <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-indigo-600/15 blur-[120px] rounded-full"></div>
+    <div class="absolute top-1/3 -right-20 w-[400px] h-[350px] bg-sky-500/10 blur-[100px] rounded-full"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:24px_24px] opacity-25"></div>
+  </div>
+
+  <!-- Top Domain & Brand Verification Banner with Direct Link -->
+  <div class="w-full bg-[#05080f] border-b border-slate-800/80 px-4 py-2 text-xs text-slate-300 relative z-50">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 text-[11px] font-semibold">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+          <span>Verified Domain</span>
+        </span>
+        <span class="text-slate-400 hidden sm:inline">Official Platform Domain:</span>
+        <a href="https://serpgpt.pro" target="_blank" rel="noopener noreferrer" class="font-mono font-semibold text-indigo-400 hover:text-indigo-300 underline underline-offset-2 flex items-center gap-1 transition-colors">
+          <span>serpgpt.pro</span>
+          <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+        </a>
+      </div>
+      <div class="flex items-center gap-4 text-[11px] text-slate-400">
+        <button type="button" id="copy-domain-top-btn" class="hover:text-white flex items-center gap-1.5 transition-colors focus:outline-none">
+          <svg class="w-3.5 h-3.5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+          <span id="copy-domain-top-text">Copy https://serpgpt.pro</span>
+        </button>
+        <span class="text-slate-700">|</span>
+        <a href="https://serpgpt.pro" target="_blank" rel="noopener noreferrer" class="text-indigo-300 hover:text-white flex items-center gap-1 font-medium transition-colors">
+          <span>Open Site</span>
+          <span>&rarr;</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header / Navigation Bar -->
+  <header class="sticky top-0 z-40 w-full backdrop-blur-md bg-[#090d16]/85 border-b border-slate-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      
+      <!-- Brand Wordmark & Domain Badge -->
+      <div class="flex items-center gap-3">
+        <a href="/" data-route="home" class="flex items-center gap-2.5 text-left group transition-opacity hover:opacity-90">
+          <div class="w-8 h-8 rounded-lg bg-gradient-to-tr from-indigo-600 to-sky-400 p-[1px] shadow-sm shadow-indigo-500/20">
+            <div class="w-full h-full bg-[#090d16] rounded-[7px] flex items-center justify-center">
+              <svg class="w-4 h-4 text-indigo-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                <polyline points="11 8 13 11 9 11 11 14"></polyline>
+              </svg>
+            </div>
+          </div>
+          <span class="text-xl font-bold tracking-tight text-white">
+            SERP<span class="text-indigo-400 font-extrabold">gpt</span><span class="text-slate-400 font-medium">.pro</span>
+          </span>
+        </a>
+
+        <!-- Direct domain link badge in navbar -->
+        <a href="https://serpgpt.pro" target="_blank" rel="noopener noreferrer" title="Visit serpgpt.pro" class="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-slate-900 border border-slate-700/80 text-xs font-mono text-indigo-300 hover:text-indigo-200 hover:border-indigo-500/60 transition-all">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+          <span>serpgpt.pro</span>
+          <svg class="w-3 h-3 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+        </a>
+      </div>
+
+      <!-- Quick Navigation -->
+      <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-400">
+        <a href="#features" data-route="home" class="hover:text-slate-200 transition-colors">Features</a>
+        <a href="#methodology" data-route="home" class="hover:text-slate-200 transition-colors">Methodology</a>
+        <a href="#table-section" data-route="home" class="hover:text-slate-200 transition-colors">Explorer</a>
+        <a href="/privacy" data-route="privacy" class="hover:text-slate-200 transition-colors">Privacy</a>
+        <a href="/terms" data-route="terms" class="hover:text-slate-200 transition-colors">Terms</a>
+      </nav>
+
+      <!-- Action CTA Button (No Google Sign In) -->
+      <div class="flex items-center gap-3">
+        <a href="#table-section" class="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold text-white bg-indigo-600 hover:bg-indigo-500 rounded-lg transition duration-150 shadow-sm shadow-indigo-600/30 active:scale-95">
+          <svg class="w-3.5 h-3.5 text-indigo-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+          <span>Explore Keywords</span>
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main class="flex-grow z-10">
+
+    <!-- VIEW 1: HOME & HERO PANEL -->
+    <div id="home-view" class="transition-opacity duration-200">
+      
+      <!-- Hero Section -->
+      <section class="pt-16 pb-12 sm:pt-24 sm:pb-16 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+        
+        <!-- Live Trust & Domain Indicator -->
+        <div class="flex flex-wrap items-center justify-center gap-3 mb-8">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-indigo-950/60 border border-indigo-800/50 text-indigo-300 text-xs font-medium shadow-sm">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span>Google Ads API Compliant Architecture</span>
+            <span class="text-indigo-400/50">·</span>
+            <span class="text-slate-300">Live Search &amp; CPC Analytics</span>
+          </div>
+
+          <!-- Clickable Domain Badge with Link -->
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900 border border-slate-700/80 text-xs">
+            <span class="text-slate-400">Platform:</span>
+            <a href="https://serpgpt.pro" target="_blank" rel="noopener noreferrer" class="font-mono font-semibold text-indigo-400 hover:text-indigo-300 underline underline-offset-2 flex items-center gap-1 transition-colors">
+              <span>serpgpt.pro</span>
+              <svg class="w-3 h-3 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Hero Headline -->
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-6 [text-wrap:balance]">
+          Find Hidden Traffic Goldmines with AI
+        </h1>
+
+        <!-- Hero Subheadline -->
+        <p class="text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed mb-10 font-normal">
+          SERPgpt.pro sifts through millions of search queries to extract high-volume, low-competition keywords in seconds.
+        </p>
+
+        <!-- Functional Mock UI: Search Input Container -->
+        <div class="max-w-3xl mx-auto bg-slate-900/90 border border-slate-800 rounded-2xl p-3 sm:p-4 shadow-2xl shadow-indigo-950/40 backdrop-blur-xl mb-4">
+          <form id="niche-search-form" class="flex flex-col sm:flex-row gap-3">
+            <div class="relative flex-grow">
+              <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-500">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+              </div>
+              <input 
+                id="niche-input"
+                type="text" 
+                value="Government Grants"
+                placeholder="Enter a seed niche (e.g. Government Grants, Professional Exams, Remote Visas)..." 
+                class="w-full pl-11 pr-4 py-3 bg-slate-950/80 border border-slate-700/80 rounded-xl text-slate-100 placeholder-slate-500 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all"
+                aria-label="Target search niche"
+              />
+            </div>
+            <button 
+              type="submit" 
+              class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-500 hover:to-indigo-400 text-white font-semibold text-sm rounded-xl transition duration-150 shadow-lg shadow-indigo-600/30 whitespace-nowrap active:scale-[0.98]"
+            >
+              <svg class="w-4 h-4 text-indigo-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+              <span>Explore Niches</span>
+            </button>
+          </form>
+
+          <!-- Sample Niche Suggestions -->
+          <div class="mt-3.5 pt-3 border-t border-slate-800/80 flex flex-wrap items-center gap-2 text-xs text-slate-400 text-left">
+            <span class="font-medium text-slate-500">Sample niches:</span>
+            <button type="button" class="preset-btn px-2.5 py-1 rounded-md bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors" data-niche="Government Grants">Government Grants</button>
+            <button type="button" class="preset-btn px-2.5 py-1 rounded-md bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors" data-niche="Professional Exams">Professional Exams</button>
+            <button type="button" class="preset-btn px-2.5 py-1 rounded-md bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors" data-niche="Remote Work Visas">Remote Work Visas</button>
+            <button type="button" class="preset-btn px-2.5 py-1 rounded-md bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white transition-colors" data-niche="Solar Rebates 2026">Solar Rebates 2026</button>
+          </div>
+        </div>
+
+        <p class="text-xs text-slate-500">
+          Real-time SERP parsing with automated search intent classification &amp; verified difficulty scores.
+        </p>
+
+      </section>
+
+      <!-- Functional Data Table Section -->
+      <section id="table-section" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+        <div class="bg-slate-900/80 border border-slate-800 rounded-2xl overflow-hidden shadow-xl backdrop-blur-sm">
+          
+          <!-- Table Header Controls Bar -->
+          <div class="px-6 py-4 border-b border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-slate-900/60">
+            <div>
+              <div class="flex items-center gap-2">
+                <h3 class="text-base font-semibold text-white">Extracted Low-Competition Keywords</h3>
+                <span id="active-niche-tag" class="text-xs px-2 py-0.5 rounded bg-indigo-950 text-indigo-300 border border-indigo-800/60 font-mono font-medium">Niche: Government Grants</span>
+              </div>
+              <p class="text-xs text-slate-400 mt-0.5">Showing verified search opportunities with KD &lt; 30 and search volume &gt; 10,000 /mo.</p>
+            </div>
+            <div class="flex items-center gap-2 self-start sm:self-auto">
+              <span class="inline-flex items-center gap-1.5 text-xs text-emerald-400 bg-emerald-950/60 border border-emerald-800/50 px-2.5 py-1 rounded-md font-medium">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span>Live Data Verified</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- The 3-Column Table -->
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse" id="keywords-table">
+              <thead>
+                <tr class="border-b border-slate-800 text-xs font-semibold uppercase tracking-wider text-slate-400 bg-slate-950/50">
+                  <th scope="col" class="py-3.5 px-6">Keyword</th>
+                  <th scope="col" class="py-3.5 px-6 text-right">Monthly Volume</th>
+                  <th scope="col" class="py-3.5 px-6 text-center">Competition Level</th>
+                </tr>
+              </thead>
+              <tbody id="table-body" class="divide-y divide-slate-800/70 text-sm">
+                <!-- Dynamically populated via JS, initial static markup for zero JS crawlability -->
+                <tr class="hover:bg-slate-800/40 transition-colors">
+                  <td class="py-4 px-6 font-medium text-slate-100 flex items-center gap-2">
+                    <span>small business grants for women veterans</span>
+                    <span class="text-[10px] uppercase font-mono px-1.5 py-0.5 rounded bg-slate-800 text-slate-400">Informational</span>
+                  </td>
+                  <td class="py-4 px-6 text-right font-mono font-semibold text-slate-200 tabular-nums">49,500 <span class="text-xs font-normal text-slate-500">/mo</span></td>
+                  <td class="py-4 px-6 text-center">
+                    <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                      <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                      <span>KD 18 · Very Low</span>
+                    </span>
+                  </td>
+                </tr>
+                <tr class="hover:bg-slate-800/40 transition-colors">
+                  <td class="py-4 px-6 font-medium text-slate-100 flex items-center gap-2">
+                    <span>first time home buyer grants non citizen</span>
+                    <span class="text-[10px] uppercase font-mono px-1.5 py-0.5 rounded bg-slate-800 text-slate-400">Commercial</span>
+                  </td>
+                  <td class="py-4 px-6 text-right font-mono font-semibold text-slate-200 tabular-nums">33,100 <span class="text-xs font-normal text-slate-500">/mo</span></td>
+                  <td class="py-4 px-6 text-center">
+                    <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                      <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                      <span>KD 22 · Low</span>
+                    </span>
+                  </td>
+                </tr>
+                <tr class="hover:bg-slate-800/40 transition-colors">
+                  <td class="py-4 px-6 font-medium text-slate-100 flex items-center gap-2">
+                    <span>agricultural equipment state subsidies list</span>
+                    <span class="text-[10px] uppercase font-mono px-1.5 py-0.5 rounded bg-slate-800 text-slate-400">Informational</span>
+                  </td>
+                  <td class="py-4 px-6 text-right font-mono font-semibold text-slate-200 tabular-nums">27,200 <span class="text-xs font-normal text-slate-500">/mo</span></td>
+                  <td class="py-4 px-6 text-center">
+                    <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                      <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                      <span>KD 14 · Untapped</span>
+                    </span>
+                  </td>
+                </tr>
+                <tr class="hover:bg-slate-800/40 transition-colors">
+                  <td class="py-4 px-6 font-medium text-slate-100 flex items-center gap-2">
+                    <span>rural broadband community development grant</span>
+                    <span class="text-[10px] uppercase font-mono px-1.5 py-0.5 rounded bg-slate-800 text-slate-400">Commercial</span>
+                  </td>
+                  <td class="py-4 px-6 text-right font-mono font-semibold text-slate-200 tabular-nums">18,400 <span class="text-xs font-normal text-slate-500">/mo</span></td>
+                  <td class="py-4 px-6 text-center">
+                    <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                      <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                      <span>KD 24 · Low</span>
+                    </span>
+                  </td>
+                </tr>
+                <tr class="hover:bg-slate-800/40 transition-colors">
+                  <td class="py-4 px-6 font-medium text-slate-100 flex items-center gap-2">
+                    <span>nonprofit solar panel installation grants</span>
+                    <span class="text-[10px] uppercase font-mono px-1.5 py-0.5 rounded bg-slate-800 text-slate-400">Informational</span>
+                  </td>
+                  <td class="py-4 px-6 text-right font-mono font-semibold text-slate-200 tabular-nums">14,900 <span class="text-xs font-normal text-slate-500">/mo</span></td>
+                  <td class="py-4 px-6 text-center">
+                    <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                      <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                      <span>KD 19 · Low</span>
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Table Bottom Note -->
+          <div class="px-6 py-3 bg-slate-950/60 border-t border-slate-800 text-xs text-slate-400 flex flex-col sm:flex-row justify-between items-center gap-2">
+            <span>Algorithm analyzes SERP domain authority, page title optimization, and content depth.</span>
+            <span class="text-slate-500">Search volume normalized over trailing 12 months.</span>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SaaS Value & Security Architecture Grid -->
+      <section id="features" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-t border-slate-800/60">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">Enterprise-Grade Search Intelligence</h2>
+          <p class="text-sm text-slate-400 mt-2">Built for creators, SEO agencies, and marketers who demand verifiable ranking opportunities.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          
+          <div class="bg-slate-900/60 border border-slate-800/80 rounded-xl p-6 hover:border-slate-700 transition-all">
+            <div class="w-10 h-10 rounded-lg bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 mb-4">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+              </svg>
+            </div>
+            <h3 class="text-base font-semibold text-white mb-2">Intent-Aware Semantic Analysis</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              We go beyond raw strings. Our proprietary NLP pipeline clusters keywords by commercial, transactional, and informational intent so you only write content that converts.
+            </p>
+          </div>
+
+          <div class="bg-slate-900/60 border border-slate-800/80 rounded-xl p-6 hover:border-slate-700 transition-all">
+            <div class="w-10 h-10 rounded-lg bg-sky-500/10 border border-sky-500/20 flex items-center justify-center text-sky-400 mb-4">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+              </svg>
+            </div>
+            <h3 class="text-base font-semibold text-white mb-2">Low-Competition Scoring</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Every keyword is cross-referenced against top 10 SERP results. If authoritative domains have weak topical authority or low word counts, the keyword is flagged as an immediate win.
+            </p>
+          </div>
+
+          <div class="bg-slate-900/60 border border-slate-800/80 rounded-xl p-6 hover:border-slate-700 transition-all">
+            <div class="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mb-4">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+              </svg>
+            </div>
+            <h3 class="text-base font-semibold text-white mb-2">Google Ads API &amp; Policy Compliance</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+              Engineered in strict accordance with the Google Ads API Terms and Conditions and Google Third-Party Policy. Independent search intelligence platform safeguarding user queries with zero data resale.
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Domain Verification & Official Endpoints Architecture Card -->
+      <section id="domain-profile" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+        <div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-6 sm:p-8 shadow-xl backdrop-blur-md">
+          <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-6 border-b border-slate-800">
+            <div>
+              <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-indigo-950/70 border border-indigo-800/50 text-indigo-300 text-xs font-medium mb-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                <span>Verified Domain Profile</span>
+              </div>
+              <h3 class="text-xl font-bold text-white tracking-tight">Official Domain: serpgpt.pro</h3>
+              <p class="text-xs sm:text-sm text-slate-400 mt-1">
+                Authorized primary production domain for the SERPgpt.pro SaaS application and Google Cloud OAuth verification.
+              </p>
+            </div>
+            <div class="flex flex-wrap items-center gap-3">
+              <a 
+                href="https://serpgpt.pro" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="inline-flex items-center gap-2 px-4 py-2.5 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-xs rounded-xl shadow-md shadow-indigo-600/20 transition-colors"
+              >
+                <span>Visit https://serpgpt.pro</span>
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              </a>
+              <button 
+                type="button" 
+                id="copy-domain-card-btn" 
+                class="inline-flex items-center gap-2 px-4 py-2.5 bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-200 text-xs font-semibold rounded-xl transition-colors"
+              >
+                <svg class="w-3.5 h-3.5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                <span id="copy-domain-card-text">Copy Domain Link</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Technical Endpoints Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 pt-6">
+            
+            <div class="bg-slate-950/60 border border-slate-800/80 rounded-xl p-4">
+              <span class="text-[11px] font-medium text-slate-500 uppercase tracking-wider block">Primary Web Address</span>
+              <a href="https://serpgpt.pro" target="_blank" rel="noopener noreferrer" class="font-mono text-sm font-semibold text-indigo-400 hover:text-indigo-300 underline underline-offset-2 mt-1 inline-flex items-center gap-1">
+                <span>serpgpt.pro</span>
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+              </a>
+              <span class="text-[11px] text-emerald-400 block mt-1">HTTPS / TLS 1.3 Active</span>
+            </div>
+
+            <div class="bg-slate-950/60 border border-slate-800/80 rounded-xl p-4">
+              <span class="text-[11px] font-medium text-slate-500 uppercase tracking-wider block">Privacy Policy</span>
+              <a href="/privacy" data-route="privacy" class="font-mono text-xs font-semibold text-indigo-400 hover:text-indigo-300 underline underline-offset-2 mt-1 inline-block">
+                serpgpt.pro/privacy
+              </a>
+              <span class="text-[11px] text-slate-400 block mt-1">Limited Use Disclosed</span>
+            </div>
+
+            <div class="bg-slate-950/60 border border-slate-800/80 rounded-xl p-4">
+              <span class="text-[11px] font-medium text-slate-500 uppercase tracking-wider block">Terms of Service</span>
+              <a href="/terms" data-route="terms" class="font-mono text-xs font-semibold text-indigo-400 hover:text-indigo-300 underline underline-offset-2 mt-1 inline-block">
+                serpgpt.pro/terms
+              </a>
+              <span class="text-[11px] text-slate-400 block mt-1">Governing Agreement</span>
+            </div>
+
+            <div class="bg-slate-950/60 border border-slate-800/80 rounded-xl p-4">
+              <span class="text-[11px] font-medium text-slate-500 uppercase tracking-wider block">API &amp; Platform Status</span>
+              <span class="font-mono text-xs text-slate-300 mt-1 block truncate" title="https://serpgpt.pro/api/v1">
+                serpgpt.pro/api/v1
+              </span>
+              <span class="text-[11px] text-emerald-400 block mt-1">Google Ads API Compliant</span>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Google Ads API Trust & Compliance Banner -->
+      <section id="methodology" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+        <div class="bg-gradient-to-r from-indigo-950/40 via-slate-900 to-sky-950/40 border border-indigo-900/40 rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div class="max-w-2xl text-left">
+            <div class="inline-flex items-center gap-2 text-xs font-semibold text-indigo-400 mb-2">
+              <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+              </svg>
+              <span>Google Ads API Policy Compliance &amp; Non-Affiliation</span>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-1">Independent Search Intelligence Built on Transparent Standards</h3>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              SERPgpt.pro is an independent SaaS tool and is not an official product, partner, or affiliate of Google LLC. &ldquo;Google&rdquo; and &ldquo;Google Ads&rdquo; are registered trademarks of Google LLC. We strictly adhere to the Google Ads API Terms and Conditions, the Google Third-Party Policy, and data privacy safeguards.
+            </p>
+          </div>
+          <div class="flex items-center gap-3 shrink-0">
+            <a href="/privacy" data-route="privacy" class="px-4 py-2 text-xs font-medium text-slate-200 bg-slate-800 hover:bg-slate-700 border border-slate-700 rounded-lg transition-colors">
+              Read Privacy Policy
+            </a>
+            <a href="/terms" data-route="terms" class="px-4 py-2 text-xs font-medium text-slate-200 bg-slate-800 hover:bg-slate-700 border border-slate-700 rounded-lg transition-colors">
+              Read Terms of Service
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- VIEW 2: PRIVACY POLICY VIEW (Injectable / Navigable) -->
+    <section id="privacy-view" class="hidden max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 transition-opacity duration-200">
+      
+      <!-- Back to Explorer Button -->
+      <div class="mb-8">
+        <a href="/" data-route="home" class="inline-flex items-center gap-2 text-xs font-medium text-indigo-400 hover:text-indigo-300 transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+          </svg>
+          <span>← Back to Keyword Explorer</span>
+        </a>
+      </div>
+
+      <article class="bg-slate-900/90 border border-slate-800 rounded-2xl p-6 sm:p-10 shadow-2xl text-slate-300 text-sm leading-relaxed space-y-6">
+        
+        <header class="border-b border-slate-800 pb-6">
+          <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-indigo-950/60 border border-indigo-800/40 text-indigo-300 text-xs font-medium mb-3">
+            <span>Official Policy Document</span>
+          </div>
+          <h1 class="text-3xl font-extrabold text-white tracking-tight">SERPgpt.pro Privacy Policy</h1>
+          <p class="text-xs text-slate-400 mt-2">
+            Last Updated: September 27, 2026 · Effective Date: September 27, 2026
+          </p>
+        </header>
+
+        <section class="space-y-3">
+          <h2 class="text-lg font-semibold text-white">1. Introduction &amp; Scope</h2>
+          <p>
+            SERPgpt.pro ("we", "our", or "us") operates the website and software platform located at <a href="https://serpgpt.pro" class="text-indigo-400 underline">https://serpgpt.pro</a>. This Privacy Policy describes how we collect, protect, and handle personal data when you access our AI-powered keyword exploration tools and related services (collectively, the "Services").
+          </p>
+          <p>
+            We are dedicated to safeguarding the privacy and security of our users and visitors. By using SERPgpt.pro, you consent to the data collection and usage practices outlined in this policy.
+          </p>
+        </section>
+
+        <section class="space-y-3">
+          <h2 class="text-lg font-semibold text-white">2. Information We Collect</h2>
+          <p>We only collect information necessary to provide, optimize, and secure our keyword analysis tools:</p>
+          <ul class="list-disc list-inside space-y-1.5 pl-2 text-slate-300">
+            <li><strong class="text-white">Account &amp; Registration Information:</strong> Your business email address, user name, and workspace preferences when you register, subscribe, or contact our support team.</li>
+            <li><strong class="text-white">Search Niche &amp; Keyword Queries:</strong> Seed keywords, industry categories, filter criteria, and search parameters you input into the keyword explorer to analyze traffic opportunities.</li>
+            <li><strong class="text-white">Technical Usage Data:</strong> IP address, browser user-agent, operating system, timestamped session metrics, and referral URL for anti-abuse and system stability purposes.</li>
+          </ul>
+        </section>
+
+        <section class="space-y-3">
+          <h2 class="text-lg font-semibold text-white">3. How We Use Collected Information</h2>
+          <p>We process your data strictly for legitimate operational purposes:</p>
+          <ul class="list-disc list-inside space-y-1.5 pl-2 text-slate-300">
+            <li>To manage your search workspaces and deliver accurate keyword intelligence metrics.</li>
+            <li>To process algorithmic search volume lookups and compute keyword difficulty scores.</li>
+            <li>To safeguard against automated abuse, scraping attacks, and unauthorized access.</li>
+            <li>To communicate essential product announcements, billing receipts, or customer support responses.</li>
+          </ul>
+        </section>
+
+        <!-- CRITICAL GOOGLE USER DATA & GOOGLE ADS API LIMITED USE DISCLOSURE -->
+        <section class="p-5 bg-indigo-950/40 border border-indigo-800/60 rounded-xl space-y-3">
+          <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded bg-indigo-900/60 text-indigo-300 text-xs font-semibold">
+            <span>Google API Compliance Notice</span>
+          </div>
+          <h2 class="text-base font-bold text-white flex items-center gap-2">
+            <svg class="w-5 h-5 text-indigo-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+            </svg>
+            <span>4. Google API Services User Data Policy &amp; Limited Use Disclosure</span>
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-200 font-medium">
+            SERPgpt.pro's use and transfer to any other app of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener noreferrer" class="text-sky-400 underline font-semibold">Google API Services User Data Policy</a>, including the Limited Use requirements.
+          </p>
+          <p class="text-xs text-slate-300">
+            Specifically:
+          </p>
+          <ul class="list-disc list-inside space-y-1 text-xs text-slate-300 pl-2">
+            <li>Google API data is utilized strictly to provide user-facing features (keyword volume analysis, competition assessment, and search intent classification).</li>
+            <li>We do not transfer, disclose, or sell Google user data or API data to third parties, advertising networks, data brokers, or information resellers.</li>
+            <li>We do not use Google API data to serve personalized third-party advertisements or train generalized artificial intelligence/machine learning models on private search queries.</li>
+            <li>Human access to user data is strictly forbidden except in isolated security investigations or with your explicit, affirmative written consent.</li>
+          </ul>
+        </section>
+
+        <section class="space-y-3">
+          <h2 class="text-lg font-semibold text-white">5. Data Storage, Retention &amp; Security</h2>
+          <p>
+            All network communication with SERPgpt.pro is encrypted in transit using industry-standard TLS 1.3 protocol. Stored databases and auth tokens are encrypted at rest using AES-256 standard encryption algorithms hosted in SOC-2 certified cloud infrastructure.
+          </p>
+          <p>
+            We retain your profile data only for as long as your account remains active. If you discontinue your use of SERPgpt.pro, you can request immediate, permanent deletion of your data at any time.
+          </p>
+        </section>
+
+        <section class="space-y-3">
+          <h2 class="text-lg font-semibold text-white">6. Third-Party Sharing &amp; Disclosures</h2>
+          <p>
+            We maintain an uncompromising <strong class="text-white">zero-sale policy</strong>. We never sell, rent, monetize, or trade your personal data. Disclosures are limited solely to:
+          </p>
+          <ul class="list-disc list-inside space-y-1 pl-2 text-slate-300">
+            <li>Essential infrastructure service providers (e.g. Google Cloud Platform hosting and authentication) under strict data processing agreements.</li>
+            <li>Legal compliance if mandated by valid court subpoena, law enforcement warrant, or enforceable regulatory order.</li>
+          </ul>
+        </section>
+
+        <section class="space-y-3">
+          <h2 class="text-lg font-semibold text-white">7. Your Data Rights &amp; Deletion Inquiries</h2>
+          <p>
+            Regardless of your geographic location, you retain full ownership of your personal data. You have the right to inspect, correct, export, or permanently erase your user profile and saved keyword projects.
+          </p>
+          <p>
+            To submit a formal data deletion or export request, email our compliance team directly at <a href="mailto:privacy@serpgpt.pro" class="text-indigo-400 font-semibold underline">privacy@serpgpt.pro</a>. All requests are processed within thirty (30) calendar days without charge.
+          </p>
+        </section>
+
+        <section class="space-y-3">
+          <h2 class="text-lg font-semibold text-white">8. Cookies and Storage</h2>
+          <p>
+            SERPgpt.pro uses strictly necessary session cookies and browser local storage solely to retain your authentication state, search filter preferences, and theme state. We do not use third-party tracking cookies or ad network pixels.
+          </p>
+        </section>
+
+        <section class="space-y-3">
+          <h2 class="text-lg font-semibold text-white">9. Contact Information</h2>
+          <p>For questions, privacy inquiries, or regulatory compliance requests regarding this policy, contact:</p>
+          <div class="bg-slate-950/80 border border-slate-800 rounded-lg p-4 font-mono text-xs text-slate-300 space-y-1">
+            <p><strong class="text-white">SERPgpt.pro Privacy &amp; Legal Operations</strong></p>
+            <p>Official Website: https://serpgpt.pro</p>
+            <p>Direct Inquiries: <a href="mailto:privacy@serpgpt.pro" class="text-indigo-400">privacy@serpgpt.pro</a></p>
+            <p>Technical Support: <a href="mailto:support@serpgpt.pro" class="text-indigo-400">support@serpgpt.pro</a></p>
+          </div>
+        </section>
+
+        <div class="pt-6 border-t border-slate-800 text-center">
+          <a href="/" data-route="home" class="inline-flex items-center gap-2 px-5 py-2.5 bg-slate-800 hover:bg-slate-700 text-white rounded-lg text-xs font-semibold transition-colors">
+            <span>← Return to Keyword Explorer</span>
+          </a>
+        </div>
+
+      </article>
+
+    </section>
+
+    <!-- VIEW 3: TERMS OF SERVICE VIEW (Injectable / Navigable) -->
+    <section id="terms-view" class="hidden max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 transition-opacity duration-200">
+      
+      <!-- Back to Explorer Button -->
+      <div class="mb-8">
+        <a href="/" data-route="home" class="inline-flex items-center gap-2 text-xs font-medium text-indigo-400 hover:text-indigo-300 transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+          </svg>
+          <span>← Back to Keyword Explorer</span>
+        </a>
+      </div>
+
+      <article class="bg-slate-900/90 border border-slate-800 rounded-2xl p-6 sm:p-10 shadow-2xl text-slate-300 text-sm leading-relaxed space-y-6">
+        
+        <header class="border-b border-slate-800 pb-6">
+          <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded bg-indigo-950/60 border border-indigo-800/40 text-indigo-300 text-xs font-semibold mb-3">
+            <span>Governing Legal Agreement</span>
+          </div>
+          <h1 class="text-3xl font-extrabold text-white tracking-tight">SERPgpt.pro Terms of Service</h1>
+          <p class="text-xs text-slate-400 mt-2">
+            Last Updated: September 27, 2026 · Effective Date: September 27, 2026 · Official Domain: <a href="https://serpgpt.pro" class="text-indigo-400 underline font-mono">https://serpgpt.pro</a>
+          </p>
+        </header>
+
+        <!-- SECTION 1 -->
+        <section class="space-y-3">
+          <h2 class="text-lg font-semibold text-white">1. Agreement to Terms &amp; Platform Identity</h2>
+          <p>
+            These Terms of Service (&ldquo;Terms&rdquo;) constitute a legally binding agreement between you (&ldquo;User&rdquo;, &ldquo;Customer&rdquo;, or &ldquo;You&rdquo;) and SERPgpt.pro (&ldquo;SERPgpt.pro&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;, or &ldquo;our&rdquo;), governing your access to and use of the website located at <a href="https://serpgpt.pro" class="text-indigo-400 underline font-mono">https://serpgpt.pro</a> and our AI-assisted search volume and keyword discovery intelligence tools (collectively, the &ldquo;Services&rdquo;).
+          </p>
+          <p>
+            By accessing or utilizing any part of the Services, you acknowledge that you have read, understood, and agreed to be bound by these Terms and our Privacy Policy. If you do not agree to these Terms, you must immediately discontinue use of the Services.
+          </p>
+        </section>
+
+        <!-- SECTION 2: CRITICAL GOOGLE NON-AFFILIATION NOTICE FOR BRAND VERIFY -->
+        <section class="p-5 bg-slate-950/80 border border-indigo-900/50 rounded-xl space-y-3">
+          <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded bg-indigo-950 border border-indigo-800 text-indigo-300 text-xs font-semibold">
+            <span>Brand Verification &amp; Trademark Notice</span>
+          </div>
+          <h2 class="text-base font-bold text-white">2. Independent Entity Status &amp; Google Trademark Disclaimer</h2>
+          <p class="text-xs sm:text-sm text-slate-200 leading-relaxed font-normal">
+            <strong class="text-white">Independent SaaS Platform:</strong> SERPgpt.pro is an independent search marketing intelligence and keyword analytics software platform developed and operated solely by SERPgpt.pro.
+          </p>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            <strong class="text-white">Trademark Acknowledgment:</strong> SERPgpt.pro is <strong class="text-indigo-300">not affiliated with, endorsed by, sponsored by, or an official partner of Google LLC, Alphabet Inc., or any of their subsidiaries</strong>. &ldquo;Google&rdquo;, &ldquo;Google Ads&rdquo;, &ldquo;Google Search&rdquo;, and &ldquo;Google Keyword Planner&rdquo; are registered trademarks of Google LLC. Any references to Google or Google Ads trademarks on this website or within our documentation are used purely for nominative, descriptive, and technical interoperability purposes.
+          </p>
+        </section>
+
+        <!-- SECTION 3: GOOGLE ADS API TERMS & POLICIES ADHERENCE -->
+        <section class="space-y-3">
+          <h2 class="text-lg font-semibold text-white">3. Compliance with Google Ads API Terms &amp; Policies</h2>
+          <p>
+            To the extent that SERPgpt.pro accesses, processes, analyzes, or surfaces metrics derived from Google APIs or advertising tools, both SERPgpt.pro and its users agree to operate in full adherence with:
+          </p>
+          <ul class="list-disc list-inside space-y-2 pl-2 text-slate-300">
+            <li>The <a href="https://developers.google.com/google-ads/api/docs/terms/terms-and-conditions" target="_blank" rel="noopener noreferrer" class="text-sky-400 underline font-semibold">Google Ads API Terms and Conditions</a>.</li>
+            <li>The <a href="https://developers.google.com/terms" target="_blank" rel="noopener noreferrer" class="text-sky-400 underline font-semibold">Google API Terms of Service</a>.</li>
+            <li>The <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener noreferrer" class="text-sky-400 underline font-semibold">Google API Services User Data Policy</a>, including the Limited Use requirements.</li>
+            <li>All applicable <a href="https://support.google.com/adspolicy/answer/6008942" target="_blank" rel="noopener noreferrer" class="text-sky-400 underline font-semibold">Google Ads Advertising Policies</a>.</li>
+          </ul>
+        </section>
+
+        <!-- SECTION 4: GOOGLE THIRD-PARTY (3P) POLICY COMPLIANCE & FEE DISCLOSURE -->
+        <section class="p-5 bg-indigo-950/30 border border-indigo-800/60 rounded-xl space-y-3">
+          <div class="inline-flex items-center gap-2 px-2.5 py-0.5 rounded bg-indigo-900/60 text-indigo-300 text-xs font-semibold">
+            <span>Mandatory Third-Party (3P) Policy Compliance</span>
+          </div>
+          <h2 class="text-base font-bold text-white">4. Google Third-Party Policy Compliance &amp; Transparent Fee Structure</h2>
+          <p class="text-xs sm:text-sm text-slate-200 leading-relaxed font-normal">
+            SERPgpt.pro strictly respects the <a href="https://support.google.com/adspolicy/answer/6086450" target="_blank" rel="noopener noreferrer" class="text-sky-400 underline font-semibold">Google Third-Party Policy</a> (&ldquo;Working with a Third-Party Partner&rdquo;). We maintain absolute clarity regarding pricing, fees, and operational roles:
+          </p>
+          <ul class="list-disc list-inside space-y-2 text-xs text-slate-300 pl-2">
+            <li><strong class="text-white">Software Access Fees Only:</strong> All fees, subscriptions, and charges billed by SERPgpt.pro are strictly for access to our proprietary software platform, algorithmic clustering, search volume analytics, and keyword discovery reports.</li>
+            <li><strong class="text-white">Zero Markup on Ad Spend:</strong> SERPgpt.pro does NOT sell Google Ads media advertising budgets, markup advertising costs, or charge hidden management commissions. Any advertising campaign budget you choose to purchase in Google Ads is billed directly by Google LLC to your individual Google Ads billing account.</li>
+            <li><strong class="text-white">Agency &amp; Third-Party Manager Obligations:</strong> If you use data, exports, or analytics from SERPgpt.pro to manage or report on Google Ads accounts on behalf of your end clients, you agree to comply in full with Google's Third-Party Policy, provide your clients with transparent reporting that separates software costs from actual Google Ads advertising costs, and provide clients with a link to Google's educational guide: <a href="https://support.google.com/adspolicy/answer/6086450" target="_blank" rel="noopener noreferrer" class="text-sky-400 underline font-semibold">Working with a Third-Party Partner</a>.</li>
+          </ul>
+        </section>
+
+        <!-- SECTION 5: ACCOUNT DISCONNECTION & DATA PURGE PROCEDURES -->
+        <section class="space-y-3">
+          <h2 class="text-lg font-semibold text-white">5. Account Disconnection &amp; Complete Data Erasure Procedures</h2>
+          <p>
+            You maintain complete control over your projects, keyword search queries, and workspace data at all times:
+          </p>
+          <ul class="list-disc list-inside space-y-2 pl-2 text-slate-300">
+            <li><strong class="text-white">Disconnection:</strong> You may disconnect any integrated accounts, delete specific keyword project lists, or revoke access permissions at any time directly through your account preferences.</li>
+            <li><strong class="text-white">Permanent Deletion Requests:</strong> You have the absolute right to request the permanent erasure of all stored search histories, project files, and personal account details. To submit a deletion request, email our compliance operations team at <a href="mailto:privacy@serpgpt.pro" class="text-indigo-400 font-semibold underline">privacy@serpgpt.pro</a> or <a href="mailto:support@serpgpt.pro" class="text-indigo-400 font-semibold underline">support@serpgpt.pro</a> with the subject line &ldquo;Data Deletion Request&rdquo;.</li>
+            <li><strong class="text-white">30-Day Purge Guarantee:</strong> All verified data deletion requests are processed without fee within thirty (30) calendar days, permanently and irreversibly purging your data from all active application servers, databases, and secure encrypted backup snapshots.</li>
+          </ul>
+        </section>
+
+        <!-- SECTION 6: ZERO-SALE AND DATA NON-MONETIZATION -->
+        <section class="space-y-3">
+          <h2 class="text-lg font-semibold text-white">6. Data Ownership &amp; Zero Data Resale Guarantee</h2>
+          <p>
+            SERPgpt.pro maintains an uncompromising non-monetization policy regarding proprietary customer intelligence. We do NOT sell, rent, lease, barter, or transfer your keyword search inquiries, campaign queries, or account information to data brokers, advertising networks, market research resellers, or unauthorized third parties.
+          </p>
+        </section>
+
+        <!-- SECTION 7: USER ACCOUNTS & ACCEPTABLE USE -->
+        <section class="space-y-3">
+          <h2 class="text-lg font-semibold text-white">7. User Accounts &amp; Acceptable Use Policy</h2>
+          <p>
+            When registering or utilizing the Services, you agree to provide authentic and accurate account information and maintain session security. You strictly agree NOT to:
+          </p>
+          <ul class="list-disc list-inside space-y-1.5 pl-2 text-slate-300">
+            <li>Deploy automated bots, headless scrapers, or unauthorized extraction scripts to bulk harvest keyword databases or bypass platform rate limits.</li>
+            <li>Attempt to probe, reverse engineer, decompile, or compromise the SERPgpt.pro scoring algorithms or server infrastructure.</li>
+            <li>Misuse Google Ads API quotas, create artificial traffic, or violate search engine terms of service.</li>
+            <li>Use the intelligence data to orchestrate deceptive, fraudulent, defamatory, or unlawful advertising campaigns.</li>
+          </ul>
+        </section>
+
+        <!-- SECTION 8: INTELLECTUAL PROPERTY -->
+        <section class="space-y-3">
+          <h2 class="text-lg font-semibold text-white">8. Intellectual Property Rights</h2>
+          <p>
+            The SERPgpt.pro brand name, logos, website layout, styling, domain assets, proprietary difficulty algorithms, and documentation are the exclusive intellectual property of SERPgpt.pro. We grant you a limited, revocable, non-exclusive, non-transferable license to view and export keyword metrics solely for your internal business and marketing analysis purposes.
+          </p>
+        </section>
+
+        <!-- SECTION 9: DISCLAIMER OF WARRANTIES -->
+        <section class="space-y-3">
+          <h2 class="text-lg font-semibold text-white">9. Disclaimers of Advertising &amp; Search Performance Warranties</h2>
+          <p>
+            THE SERVICES ARE PROVIDED ON AN &ldquo;AS IS&rdquo; AND &ldquo;AS AVAILABLE&rdquo; BASIS WITHOUT WARRANTIES OF ANY KIND, WHETHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
+          </p>
+          <p>
+            Search volume estimations, keyword competition scores, and cost-per-click (CPC) values are algorithmic approximations calculated from public search trends and statistical modeling. Because search engine algorithms, competitor bids, and Google Ads auction dynamics fluctuate dynamically, SERPgpt.pro does not guarantee specific organic ranking positions, advertising approval, click-through rates, or financial returns.
+          </p>
+        </section>
+
+        <!-- SECTION 10: LIMITATION OF LIABILITY -->
+        <section class="space-y-3">
+          <h2 class="text-lg font-semibold text-white">10. Limitation of Liability</h2>
+          <p>
+            TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL SERPGPT.PRO, ITS DIRECTORS, EMPLOYEES, OR AFFILIATES BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING LOSS OF PROFITS, ADVERTISING COSTS, DATA LOSS, OR BUSINESS INTERRUPTION, ARISING OUT OF OR IN CONNECTION WITH YOUR USE OF OR INABILITY TO USE THE SERVICES.
+          </p>
+        </section>
+
+        <!-- SECTION 11: MODIFICATIONS & TERMINATION -->
+        <section class="space-y-3">
+          <h2 class="text-lg font-semibold text-white">11. Amendments &amp; Service Modifications</h2>
+          <p>
+            We reserve the right to revise or update these Terms periodically to reflect evolving legal, regulatory, or platform requirements (including Google Ads API policy updates). Material amendments will be reflected on this page with an updated &ldquo;Last Updated&rdquo; date. Continued use of the Services following posted revisions constitutes binding acceptance of the modified Terms.
+          </p>
+        </section>
+
+        <!-- SECTION 12: LEGAL OPERATIONS & CONTACT -->
+        <section class="space-y-3">
+          <h2 class="text-lg font-semibold text-white">12. Legal Operations &amp; Verification Contact Details</h2>
+          <p>
+            For questions, legal notices, or compliance verifications regarding these Terms of Service or Google Ads API interoperability, contact our legal counsel:
+          </p>
+          <div class="bg-slate-950/80 border border-slate-800 rounded-xl p-5 font-mono text-xs text-slate-300 space-y-1.5">
+            <p><strong class="text-white">SERPgpt.pro Legal &amp; Policy Operations</strong></p>
+            <p>Official Website: <a href="https://serpgpt.pro" class="text-indigo-400 underline">https://serpgpt.pro</a></p>
+            <p>Legal &amp; Policy Inquiries: <a href="mailto:terms@serpgpt.pro" class="text-indigo-400">terms@serpgpt.pro</a></p>
+            <p>Privacy &amp; Data Deletion: <a href="mailto:privacy@serpgpt.pro" class="text-indigo-400">privacy@serpgpt.pro</a></p>
+            <p>Customer Support: <a href="mailto:support@serpgpt.pro" class="text-indigo-400">support@serpgpt.pro</a></p>
+          </div>
+        </section>
+
+        <div class="pt-6 border-t border-slate-800 text-center">
+          <a href="/" data-route="home" class="inline-flex items-center gap-2 px-5 py-2.5 bg-slate-800 hover:bg-slate-700 text-white rounded-lg text-xs font-semibold transition-colors">
+            <span>← Return to Keyword Explorer</span>
+          </a>
+        </div>
+
+      </article>
+
+    </section>
+
+  </main>
+
+  <!-- Footer & Policy Links (Compliant with Google Ads API Brand Verification) -->
+  <footer class="w-full bg-[#070a12] border-t border-slate-800/80 py-10 z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        
+        <!-- Left: Wordmark & Core Identity -->
+        <div class="flex flex-col items-center md:items-start text-center md:text-left">
+          <div class="flex items-center gap-2">
+            <span class="text-base font-bold tracking-tight text-white">
+              SERP<span class="text-indigo-400 font-extrabold">gpt</span><span class="text-slate-400 font-normal">.pro</span>
+            </span>
+          </div>
+          <p class="text-xs text-slate-400 mt-1 max-w-sm">
+            AI-Powered Keyword Explorer that finds high-volume, low-competition search niches for content creators and marketers.
+          </p>
+          <div class="mt-2.5 flex items-center gap-2 text-xs">
+            <span class="text-slate-500">Official Web Domain:</span>
+            <a href="https://serpgpt.pro" target="_blank" rel="noopener noreferrer" class="font-mono text-indigo-400 hover:text-indigo-300 underline font-semibold flex items-center gap-1 transition-colors">
+              <span>https://serpgpt.pro</span>
+              <svg class="w-3 h-3 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Center: Policy & Navigation Links (MUST INCLUDE VISIBLE /privacy AND /terms) -->
+        <div class="flex flex-wrap items-center justify-center gap-6 text-xs font-medium">
+          <a href="/" data-route="home" class="text-slate-400 hover:text-white transition-colors">Home</a>
+          <a href="#table-section" data-route="home" class="text-slate-400 hover:text-white transition-colors">Explorer</a>
+          <!-- Mandatory clickable links to /privacy and /terms -->
+          <a href="/privacy" data-route="privacy" class="text-indigo-400 hover:text-indigo-300 underline font-semibold transition-colors">Privacy Policy</a>
+          <a href="/terms" data-route="terms" class="text-indigo-400 hover:text-indigo-300 underline font-semibold transition-colors">Terms of Service</a>
+          <a href="mailto:support@serpgpt.pro" class="text-slate-400 hover:text-white transition-colors">Support</a>
+        </div>
+
+        <!-- Right: Copyright & Google Ads API Independent Status Notice -->
+        <div class="text-xs text-slate-500 text-center md:text-right max-w-xs">
+          <p>© 2026 SERPgpt.pro. All rights reserved.</p>
+          <p class="text-[11px] text-slate-500 mt-1 leading-normal">
+            Independent software platform compliant with Google Ads API Policies. Google and Google Ads are trademarks of Google LLC.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- Single-File JavaScript Routing & Interactive Mock Handler -->
+  <script>
+    (function() {
+      // 1. Mock Datasets for Interactive Functional UI
+      const mockDatabase = {
+        'Government Grants': [
+          { keyword: 'small business grants for women veterans', volume: '49,500', kd: '18', badge: 'Very Low', intent: 'Informational' },
+          { keyword: 'first time home buyer grants non citizen', volume: '33,100', kd: '22', badge: 'Commercial', intent: 'Commercial' },
+          { keyword: 'agricultural equipment state subsidies list', volume: '27,200', kd: '14', badge: 'Untapped', intent: 'Informational' },
+          { keyword: 'rural broadband community development grant', volume: '18,400', kd: '24', badge: 'Low', intent: 'Commercial' },
+          { keyword: 'nonprofit solar panel installation grants', volume: '14,900', kd: '19', badge: 'Low', intent: 'Informational' },
+          { keyword: 'ev charging station commercial grant 2026', volume: '12,800', kd: '21', badge: 'Low', intent: 'Commercial' }
+        ],
+        'Professional Exams': [
+          { keyword: 'series 65 exam cheat sheet formulas pdf', volume: '40,500', kd: '19', badge: 'Very Low', intent: 'Informational' },
+          { keyword: 'pmp exam passing score changes 2026', volume: '36,200', kd: '23', badge: 'Low', intent: 'Informational' },
+          { keyword: 'cpa exam discipline section pass rates', volume: '29,400', kd: '21', badge: 'Low', intent: 'Commercial' },
+          { keyword: 'shrm cp mock practice exam with answers', volume: '22,100', kd: '16', badge: 'Untapped', intent: 'Commercial' },
+          { keyword: 'aws cloud practitioner flashcards printable', volume: '18,800', kd: '25', badge: 'Low', intent: 'Informational' }
+        ],
+        'Remote Work Visas': [
+          { keyword: 'spain digital nomad visa tax calculator 2026', volume: '38,900', kd: '17', badge: 'Very Low', intent: 'Commercial' },
+          { keyword: 'japan digital nomad visa income requirements', volume: '31,500', kd: '20', badge: 'Low', intent: 'Informational' },
+          { keyword: 'portugal d8 visa renewal processing time', volume: '24,600', kd: '15', badge: 'Untapped', intent: 'Informational' },
+          { keyword: 'caribbean remote work visa family application', volume: '19,200', kd: '22', badge: 'Low', intent: 'Commercial' }
+        ],
+        'Solar Rebates 2026': [
+          { keyword: 'residential solar tax credit battery add on', volume: '44,200', kd: '21', badge: 'Low', intent: 'Commercial' },
+          { keyword: 'california net metering 3 grandfathering rules', volume: '28,100', kd: '19', badge: 'Very Low', intent: 'Informational' },
+          { keyword: 'texas solar panel buyback plans comparison', volume: '21,700', kd: '16', badge: 'Untapped', intent: 'Commercial' },
+          { keyword: 'heat pump and solar combo federal incentives', volume: '17,500', kd: '23', badge: 'Low', intent: 'Informational' }
+        ]
+      };
+
+      // 2. DOM Elements
+      const homeView = document.getElementById('home-view');
+      const privacyView = document.getElementById('privacy-view');
+      const termsView = document.getElementById('terms-view');
+      const tableBody = document.getElementById('table-body');
+      const activeNicheTag = document.getElementById('active-niche-tag');
+      const nicheInput = document.getElementById('niche-input');
+      const searchForm = document.getElementById('niche-search-form');
+
+      // 3. Single-File SPA Route Switcher
+      function renderRoute(route) {
+        // Normalize path or hash
+        const cleanRoute = (route || window.location.pathname || window.location.hash || '/').replace(/^[#/]/, '').toLowerCase();
+
+        if (cleanRoute === 'privacy' || cleanRoute.includes('privacy')) {
+          homeView.classList.add('hidden');
+          termsView.classList.add('hidden');
+          privacyView.classList.remove('hidden');
+          document.title = 'Privacy Policy – SERPgpt.pro';
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else if (cleanRoute === 'terms' || cleanRoute.includes('terms')) {
+          homeView.classList.add('hidden');
+          privacyView.classList.add('hidden');
+          termsView.classList.remove('hidden');
+          document.title = 'Terms of Service – SERPgpt.pro';
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+          privacyView.classList.add('hidden');
+          termsView.classList.add('hidden');
+          homeView.classList.remove('hidden');
+          document.title = 'SERPgpt.pro – AI-Powered Keyword Explorer';
+        }
+      }
+
+      // 4. Intercept all internal policy and home links
+      document.addEventListener('click', function(e) {
+        const link = e.target.closest('a[data-route]');
+        if (link) {
+          const targetRoute = link.getAttribute('data-route');
+          const href = link.getAttribute('href');
+
+          // If it's a hash jump within home view (like #features or #table-section)
+          if (href && href.startsWith('#') && targetRoute === 'home') {
+            if (homeView.classList.contains('hidden')) {
+              renderRoute('home');
+            }
+            return; // let native hash jump happen
+          }
+
+          e.preventDefault();
+          const routeName = targetRoute === 'privacy' ? '/privacy' : (targetRoute === 'terms' ? '/terms' : '/');
+          
+          try {
+            history.pushState({ route: targetRoute }, '', routeName);
+          } catch (err) {
+            window.location.hash = targetRoute === 'home' ? '' : targetRoute;
+          }
+          renderRoute(targetRoute);
+        }
+      });
+
+      // Handle Browser Back / Forward buttons
+      window.addEventListener('popstate', function() {
+        const path = window.location.pathname.replace(/^\//, '') || window.location.hash.replace(/^#/, '');
+        renderRoute(path);
+      });
+
+      window.addEventListener('hashchange', function() {
+        const hash = window.location.hash.replace(/^#/, '');
+        renderRoute(hash);
+      });
+
+      // 5. Interactive Mock Data Renderer
+      function populateKeywords(nicheName) {
+        const key = Object.keys(mockDatabase).find(k => k.toLowerCase() === nicheName.trim().toLowerCase());
+        const data = key ? mockDatabase[key] : [
+          { keyword: `${nicheName.toLowerCase().trim()} checklist for beginners`, volume: '34,200', kd: '16', badge: 'Untapped', intent: 'Informational' },
+          { keyword: `best certified ${nicheName.toLowerCase().trim()} tools`, volume: '26,800', kd: '22', badge: 'Commercial', intent: 'Commercial' },
+          { keyword: `how to apply for ${nicheName.toLowerCase().trim()} 2026`, volume: '19,500', kd: '18', badge: 'Very Low', intent: 'Informational' },
+          { keyword: `free ${nicheName.toLowerCase().trim()} templates and formulas`, volume: '15,100', kd: '20', badge: 'Low', intent: 'Informational' }
+        ];
+
+        activeNicheTag.textContent = `Niche: ${nicheName}`;
+        tableBody.innerHTML = '';
+
+        data.forEach(item => {
+          const row = document.createElement('tr');
+          row.className = 'hover:bg-slate-800/40 transition-colors';
+          row.innerHTML = `
+            <td class="py-4 px-6 font-medium text-slate-100 flex items-center gap-2">
+              <span>${item.keyword}</span>
+              <span class="text-[10px] uppercase font-mono px-1.5 py-0.5 rounded bg-slate-800 text-slate-400">${item.intent}</span>
+            </td>
+            <td class="py-4 px-6 text-right font-mono font-semibold text-slate-200 tabular-nums">${item.volume} <span class="text-xs font-normal text-slate-500">/mo</span></td>
+            <td class="py-4 px-6 text-center">
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                <span>KD ${item.kd} · ${item.badge}</span>
+              </span>
+            </td>
+          `;
+          tableBody.appendChild(row);
+        });
+      }
+
+      // Handle Niche Form Submission
+      if (searchForm) {
+        searchForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          const query = nicheInput.value.trim() || 'Government Grants';
+          populateKeywords(query);
+          const tableElem = document.getElementById('table-section');
+          if (tableElem) {
+            tableElem.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      }
+
+      // Handle Preset Niche Buttons
+      document.querySelectorAll('.preset-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+          const niche = this.getAttribute('data-niche');
+          nicheInput.value = niche;
+          populateKeywords(niche);
+          const tableElem = document.getElementById('table-section');
+          if (tableElem) {
+            tableElem.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      });
+
+      // Domain Link Copy Helper
+      function handleCopyDomain(btnId, textId, originalText) {
+        const btn = document.getElementById(btnId);
+        const textElem = document.getElementById(textId);
+        if (!btn || !textElem) return;
+
+        btn.addEventListener('click', function() {
+          const domainUrl = 'https://serpgpt.pro';
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(domainUrl).then(function() {
+              textElem.textContent = 'Copied!';
+              setTimeout(function() {
+                textElem.textContent = originalText;
+              }, 2000);
+            }).catch(function() {
+              fallbackCopy(domainUrl, textElem, originalText);
+            });
+          } else {
+            fallbackCopy(domainUrl, textElem, originalText);
+          }
+        });
+      }
+
+      function fallbackCopy(text, textElem, originalText) {
+        const input = document.createElement('input');
+        input.value = text;
+        document.body.appendChild(input);
+        input.select();
+        try {
+          document.execCommand('copy');
+          textElem.textContent = 'Copied!';
+        } catch (err) {
+          textElem.textContent = 'https://serpgpt.pro';
+        }
+        document.body.removeChild(input);
+        setTimeout(function() {
+          textElem.textContent = originalText;
+        }, 2000);
+      }
+
+      handleCopyDomain('copy-domain-top-btn', 'copy-domain-top-text', 'Copy https://serpgpt.pro');
+      handleCopyDomain('copy-domain-card-btn', 'copy-domain-card-text', 'Copy Domain Link');
+
+      // Initial Route Execution on Page Load
+      const initialPath = window.location.pathname.replace(/^\//, '') || window.location.hash.replace(/^#/, '');
+      renderRoute(initialPath);
+    })();
+  </script>
+</body>
+</html>

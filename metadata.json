@@ -1,0 +1,6 @@
+{
+  "name": "SERPgpt.pro - AI-Powered Keyword Explorer",
+  "description": "AI-Powered Keyword Explorer that finds high-volume, low-competition search niches for content creators and marketers.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

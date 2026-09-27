@@ -1,0 +1,8 @@
+name = "serpgpt-pro"
+compatibility_date = "2026-09-27"
+
+[build]
+command = "npm run build"
+
+[assets]
+directory = "./dist"
