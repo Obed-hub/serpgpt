@@ -3579,8 +3579,15 @@ app.post('/api/published-pages', (req, res) => {
   }
 });
 
-function generateSerpGptSitemapXml(): string {
-  const baseUrl = 'https://serpgpt.pro';
+function generateSerpGptSitemapXml(req?: express.Request): string {
+  let baseUrl = 'https://serpgpt.pro';
+  if (req) {
+    const hostHeader = String(req.headers['x-forwarded-host'] || req.headers.host || '').trim();
+    if (hostHeader.includes('run.app') || hostHeader.includes('localhost') || hostHeader.includes('127.0.0.1')) {
+      const proto = String(req.headers['x-forwarded-proto'] || req.protocol || 'https');
+      baseUrl = `${proto}://${hostHeader}`;
+    }
+  }
   const today = new Date().toISOString().split('T')[0];
   const allPublishedPages = Array.from(publishedPagesStore.values());
 
@@ -3804,8 +3811,8 @@ app.post('/api/sitemap/extract', async (req, res) => {
       cleanInput.startsWith('/sitemap') ||
       cleanInput.endsWith('/sitemap.xml')
     ) {
-      const xml = generateSerpGptSitemapXml();
-      const parsed = parseXmlSitemapContent(xml, 'https://serpgpt.pro/sitemap.xml');
+      const xml = generateSerpGptSitemapXml(req);
+      const parsed = parseXmlSitemapContent(xml, 'sitemap.xml');
       res.json({
         targetSitemap: 'https://serpgpt.pro/sitemap.xml',
         childSitemapsFound: parsed.childSitemaps,
@@ -5338,8 +5345,8 @@ app.get('/api/seo-urls/resolve', (req, res) => {
 });
 
 // 10. Dynamic XML Sitemap, LLMs.txt & robots.txt for Search Engine Crawlers & AI Indexing Bots (ChatGPT, Perplexity, Gemini, Claude)
-app.get('/sitemap.xml', (_req, res) => {
-  const xml = generateSerpGptSitemapXml();
+app.get('/sitemap.xml', (req, res) => {
+  const xml = generateSerpGptSitemapXml(req);
   res.setHeader('Content-Type', 'application/xml; charset=utf-8');
   res.send(xml);
 });
