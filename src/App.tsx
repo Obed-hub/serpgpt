@@ -61,7 +61,8 @@ export default function App() {
     if (isMasterSeoRoutePrefix(window.location.pathname)) {
       return window.location.pathname.replace(/\/+$/, '');
     }
-    return null;
+    const cleanPath = window.location.pathname.replace(/\/+$/, '').toLowerCase();
+    return cleanPath.length > 1 && cleanPath !== '/' ? cleanPath : null;
   });
 
   const [blogArticleSlug, setBlogArticleSlug] = useState<string | null>(() => {
@@ -518,10 +519,11 @@ export default function App() {
     );
   }
 
-  if (currentPage === 'master-seo' && masterSeoSlug) {
+  if (currentPage === 'master-seo') {
+    const slugToUse = masterSeoSlug || window.location.pathname.replace(/\/+$/, '') || '/process/how-to-access-google-keyword-planner-for-free';
     return (
       <SeoMasterBlueprintPage
-        activeSlug={masterSeoSlug}
+        activeSlug={slugToUse}
         publishedPages={publishedMasterPages}
         onSelectMasterSlug={(slug) => openMasterSeoHub(slug)}
         onLaunchLiveKeywordScan={(seed) => {

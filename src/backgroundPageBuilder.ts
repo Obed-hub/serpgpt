@@ -349,6 +349,7 @@ export function generateProcessStepsForPage(page: MasterSeoPageData): ProcessSte
 }
 
 export const ARCHETYPE_URL_PREFIXES = [
+  '/tools/',
   '/compare/',
   '/alternatives/',
   '/best/',

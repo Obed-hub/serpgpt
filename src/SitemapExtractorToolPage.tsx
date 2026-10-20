@@ -666,20 +666,59 @@ export default function SitemapExtractorToolPage({
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-800/70 text-xs font-mono">
-                  {filteredUrls.map((item, idx) => (
-                    <tr key={item.loc + idx} className="hover:bg-slate-900/60 transition-colors">
-                      <td className="py-2.5 px-4 text-slate-500">{idx + 1}</td>
-                      <td className="py-2.5 px-4 text-slate-100 break-all">
-                        <a
-                          href={item.loc}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="hover:text-indigo-400 inline-flex items-center gap-1.5"
-                        >
-                          <span>{item.loc}</span>
-                          <ExternalLink className="w-3 h-3 text-slate-500 shrink-0" />
-                        </a>
-                      </td>
+                  {filteredUrls.map((item, idx) => {
+                    const targetHref = (() => {
+                      try {
+                        const urlObj = new URL(item.loc, window.location.origin);
+                        if (
+                          urlObj.hostname.includes('serpgpt.pro') ||
+                          urlObj.hostname === window.location.hostname ||
+                          urlObj.hostname === 'localhost' ||
+                          urlObj.hostname.includes('run.app')
+                        ) {
+                          return `${window.location.origin}${urlObj.pathname}${urlObj.search}${urlObj.hash}`;
+                        }
+                        return item.loc;
+                      } catch {
+                        return item.loc.startsWith('/') ? `${window.location.origin}${item.loc}` : item.loc;
+                      }
+                    })();
+
+                    const relPath = (() => {
+                      try {
+                        return new URL(item.loc, window.location.origin).pathname;
+                      } catch {
+                        return item.loc.startsWith('/') ? item.loc : `/${item.loc}`;
+                      }
+                    })();
+
+                    return (
+                      <tr key={item.loc + idx} className="hover:bg-slate-900/60 transition-colors">
+                        <td className="py-2.5 px-4 text-slate-500">{idx + 1}</td>
+                        <td className="py-2.5 px-4 text-slate-100 break-all">
+                          <div className="flex items-center gap-2 flex-wrap">
+                            <a
+                              href={targetHref}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="hover:text-indigo-400 inline-flex items-center gap-1.5 font-mono text-xs"
+                            >
+                              <span>{item.loc}</span>
+                              <ExternalLink className="w-3 h-3 text-slate-500 shrink-0" />
+                            </a>
+                            <button
+                              onClick={(e) => {
+                                e.preventDefault();
+                                window.dispatchEvent(new CustomEvent('serpgpt:navigate', { detail: relPath }));
+                              }}
+                              className="px-2 py-0.5 rounded bg-indigo-600/30 hover:bg-indigo-600/60 border border-indigo-500/40 text-indigo-200 text-[11px] font-sans font-medium transition-colors cursor-pointer shrink-0 inline-flex items-center gap-1"
+                              title="Open live interactive page inside app"
+                            >
+                              <span>Preview Page</span>
+                              <ArrowUpRight className="w-3 h-3" />
+                            </button>
+                          </div>
+                        </td>
                       <td className="py-2.5 px-3">
                         <span className="px-2 py-0.5 rounded bg-indigo-950/70 border border-indigo-800/50 text-indigo-300">
                           {item.subfolder}
@@ -707,8 +746,9 @@ export default function SitemapExtractorToolPage({
                         )}
                       </td>
                     </tr>
-                  ))}
-                </tbody>
+                  );
+                })}
+              </tbody>
               </table>
             </div>
           </div>

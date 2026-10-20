@@ -3583,7 +3583,7 @@ function generateSerpGptSitemapXml(req?: express.Request): string {
   let baseUrl = 'https://serpgpt.pro';
   if (req) {
     const hostHeader = String(req.headers['x-forwarded-host'] || req.headers.host || '').trim();
-    if (hostHeader.includes('run.app') || hostHeader.includes('localhost') || hostHeader.includes('127.0.0.1')) {
+    if (hostHeader) {
       const proto = String(req.headers['x-forwarded-proto'] || req.protocol || 'https');
       baseUrl = `${proto}://${hostHeader}`;
     }
