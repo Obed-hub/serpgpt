@@ -323,7 +323,7 @@ export const PLATFORM_TOOLS: Record<PlatformType, PlatformToolMeta> = {
   google: {
     id: 'google',
     slug: '/free-keyword-search',
-    alternateSlugs: ['/tools/google-keywords', '/'],
+    alternateSlugs: ['/tools/google-keywords'],
     name: 'Free Google Keyword Planner',
     badge: 'Google Search & Autocomplete',
     h1: 'Free Google Keyword Planner & Search Arbitrage Tool (2026)',

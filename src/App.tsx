@@ -10,6 +10,10 @@ import {
   Globe,
   Play,
   HelpCircle,
+  MapPin,
+  ShoppingBag,
+  Video,
+  Tag,
 } from 'lucide-react';
 import {
   MasterSeoPageData,
@@ -84,7 +88,14 @@ export default function App() {
     | 'platform-tool'
     | 'paa-explorer'
   >(() => {
+    const rawPath = window.location.pathname.replace(/\/+$/, '').toLowerCase() || '/';
     const p = (window.location.pathname + window.location.hash).toLowerCase();
+
+    // Explicit root homepage check
+    if (rawPath === '/' || rawPath === '' || p === '/' || p === '' || p === '#/home' || p === '#home' || p === '#/') {
+      return 'suite';
+    }
+
     if (p.includes('people-also-ask') || p.includes('question-tree')) return 'paa-explorer';
     const platformMatch = findPlatformToolByPath(window.location.pathname);
     if (platformMatch) {
@@ -94,7 +105,6 @@ export default function App() {
     if (p.includes('youtube-keyword-tool')) return 'youtube-tool';
     if (findCompetitorBlueprintByPath(window.location.pathname)) return 'competitor-suite';
     if (findSitemapBlueprintByPath(window.location.pathname)) return 'sitemap-extractor';
-    const rawPath = window.location.pathname.replace(/\/+$/, '').toLowerCase();
     if (rawPath === '/blog' || rawPath.startsWith('/blog/')) return 'blog';
     const matched = findMasterSeoPageByPath(window.location.pathname);
     if (matched || isMasterSeoRoutePrefix(window.location.pathname)) return 'master-seo';
@@ -223,7 +233,18 @@ export default function App() {
     };
 
     const handlePopState = () => {
+      const rawPath = window.location.pathname.replace(/\/+$/, '').toLowerCase() || '/';
       const p = (window.location.pathname + window.location.hash).toLowerCase();
+
+      if (rawPath === '/' || rawPath === '' || p === '/' || p === '' || p === '#/home' || p === '#home' || p === '#/') {
+        setCompetitorBlueprintSlug(null);
+        setSitemapBlueprintSlug(null);
+        setMasterSeoSlug(null);
+        setBlogArticleSlug(null);
+        setCurrentPage('suite');
+        return;
+      }
+
       if (p.includes('people-also-ask') || p.includes('question-tree')) {
         setCompetitorBlueprintSlug(null);
         setSitemapBlueprintSlug(null);
@@ -264,7 +285,6 @@ export default function App() {
         }
         return;
       }
-      const rawPath = window.location.pathname.replace(/\/+$/, '').toLowerCase();
       if (rawPath === '/blog') {
         setCompetitorBlueprintSlug(null);
         setSitemapBlueprintSlug(null);
@@ -579,21 +599,21 @@ export default function App() {
           SERPgpt.pro is the free version of Semrush, Ahrefs, and paid SEO tools—giving content creators, bloggers, and marketers unlimited keyword research, free competitor analysis, Google Autocomplete streams, and XML sitemap extraction at $0/month.
         </p>
 
-        <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 max-w-4xl mx-auto">
           <button
             type="button"
             onClick={() => navigateToPage('free-search')}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm rounded-xl shadow-lg shadow-indigo-600/25 transition-all cursor-pointer"
+            className="w-full inline-flex items-center justify-center gap-2.5 px-5 py-3.5 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold text-sm rounded-xl shadow-lg shadow-indigo-600/25 transition-all cursor-pointer"
           >
             <Search className="w-4 h-4" />
             <span>Free Keyword Search</span>
-            <ArrowRight className="w-4 h-4" />
+            <ArrowRight className="w-4 h-4 ml-auto" />
           </button>
 
           <button
             type="button"
             onClick={() => navigateToPage('paa-explorer')}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-purple-600 hover:bg-purple-500 text-white font-semibold text-sm rounded-xl shadow-lg shadow-purple-600/25 transition-all cursor-pointer"
+            className="w-full inline-flex items-center justify-center gap-2 px-5 py-3.5 bg-purple-600 hover:bg-purple-500 text-white font-semibold text-sm rounded-xl shadow-lg shadow-purple-600/25 transition-all cursor-pointer"
           >
             <HelpCircle className="w-4 h-4 text-white" />
             <span>People Also Ask &amp; Question Tree</span>
@@ -601,38 +621,65 @@ export default function App() {
 
           <button
             type="button"
+            onClick={() => openPlatformTool('local')}
+            className="w-full inline-flex items-center justify-center gap-2 px-5 py-3.5 bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-sm rounded-xl shadow-lg shadow-emerald-600/25 transition-all cursor-pointer"
+          >
+            <MapPin className="w-4 h-4 text-white" />
+            <span>Local SEO &amp; "Near Me" Generator</span>
+          </button>
+
+          <button
+            type="button"
             onClick={() => navigateToPage('youtube-tool')}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-rose-600 hover:bg-rose-500 text-white font-semibold text-sm rounded-xl shadow-lg shadow-rose-600/25 transition-all cursor-pointer"
+            className="w-full inline-flex items-center justify-center gap-2 px-5 py-3.5 bg-rose-600 hover:bg-rose-500 text-white font-semibold text-sm rounded-xl shadow-lg shadow-rose-600/25 transition-all cursor-pointer"
           >
             <Play className="w-4 h-4 fill-white" />
-            <span>YouTube Keyword Tool</span>
+            <span>YouTube Keyword &amp; Outlier Tool</span>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => openPlatformTool('amazon')}
+            className="w-full inline-flex items-center justify-center gap-2 px-5 py-3.5 bg-amber-600 hover:bg-amber-500 text-white font-semibold text-sm rounded-xl shadow-lg shadow-amber-600/25 transition-all cursor-pointer"
+          >
+            <ShoppingBag className="w-4 h-4 text-white" />
+            <span>Amazon A9 Keyword Tool</span>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => openPlatformTool('tiktok')}
+            className="w-full inline-flex items-center justify-center gap-2 px-5 py-3.5 bg-pink-600 hover:bg-pink-500 text-white font-semibold text-sm rounded-xl shadow-lg shadow-pink-600/25 transition-all cursor-pointer"
+          >
+            <Video className="w-4 h-4 text-white" />
+            <span>TikTok Viral Trend Finder</span>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => openPlatformTool('etsy')}
+            className="w-full inline-flex items-center justify-center gap-2 px-5 py-3.5 bg-orange-600 hover:bg-orange-500 text-white font-semibold text-sm rounded-xl shadow-lg shadow-orange-600/25 transition-all cursor-pointer"
+          >
+            <Tag className="w-4 h-4 text-white" />
+            <span>Etsy 13-Tag Generator</span>
           </button>
 
           <button
             type="button"
             onClick={() => openCompetitorBlueprint('/alternatives/free-competitor')}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-slate-900 hover:bg-slate-800 text-slate-100 font-semibold text-sm rounded-xl border border-indigo-500/40 transition-colors cursor-pointer"
+            className="w-full inline-flex items-center justify-center gap-2 px-5 py-3.5 bg-slate-900 hover:bg-slate-800 text-sky-300 font-semibold text-sm rounded-xl border border-sky-500/40 transition-colors cursor-pointer"
           >
-            <Globe className="w-4 h-4 text-indigo-400" />
+            <Globe className="w-4 h-4 text-sky-400" />
             <span>Competitor Finder &amp; Spy</span>
           </button>
 
           <button
             type="button"
             onClick={() => openSitemapBlueprint('/sources/site-map-extractor')}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-slate-900 hover:bg-slate-800 text-slate-100 font-semibold text-sm rounded-xl border border-slate-800 transition-colors cursor-pointer"
+            className="w-full inline-flex items-center justify-center gap-2 px-5 py-3.5 bg-slate-900 hover:bg-slate-800 text-emerald-300 font-semibold text-sm rounded-xl border border-emerald-500/40 transition-colors cursor-pointer"
           >
             <FolderTree className="w-4 h-4 text-emerald-400" />
-            <span>Site Map Extractor</span>
-          </button>
-
-          <button
-            type="button"
-            onClick={() => openBlogArticle(null)}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-slate-900 hover:bg-slate-800 text-emerald-300 font-semibold text-sm rounded-xl border border-emerald-800/60 transition-colors cursor-pointer"
-          >
-            <BookOpen className="w-4 h-4 text-emerald-400" />
-            <span>SEO Blog: Free Semrush</span>
+            <span>Site Map Link Extractor</span>
           </button>
         </div>
 

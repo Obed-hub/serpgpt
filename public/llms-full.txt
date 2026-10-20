@@ -1,0 +1,41 @@
+# SERPgpt.pro Full LLM Index & Application Architecture Specification
+
+## Overview
+SERPgpt.pro is a free web-based SEO & Keyword Intelligence platform designed to replace expensive paid suites (Semrush, Ahrefs, Moz, Screaming Frog, AnswerThePublic).
+
+## Full URL Directory & Schema Specifications
+
+### 1. Interactive Applications
+- **Homepage** (`https://serpgpt.pro/`): Free Keyword Research Tool, Competitor Finder, and Multi-Platform Suite.
+- **Google Keyword Planner Engine** (`https://serpgpt.pro/free-keyword-search`): Real-time Google autocomplete expansion, CPC bids, low-competition keywords, and Anti-Thin Page Architecture generator.
+- **People Also Ask & Question Tree** (`https://serpgpt.pro/tools/people-also-ask`): AnswerThePublic alternative with interactive SVG radial question wheels and instant FAQPage JSON-LD schema exporter.
+- **Local SEO Keyword Generator** (`https://serpgpt.pro/tools/local-seo-keywords`): Hyper-targeted "near me" service keywords, emergency 24/7 modifiers, and city landing page matrices with geo country selector (US, UK, CA, AU, NG, IN, DE, FR, BR, AE, JP, MX).
+- **YouTube Keyword Tool** (`https://serpgpt.pro/youtube-keyword-tool`): YouTube autocomplete streams, video outlier ratio analysis, and tag generator.
+- **Amazon A9 Keyword Tool** (`https://serpgpt.pro/tools/amazon-keyword-tool`): Live A9 buyer search autocomplete and 249-byte backend search term generator.
+- **TikTok Trend Finder** (`https://serpgpt.pro/tools/tiktok-keyword-tool`): FYP viral trend search suggestions and hashtag blocks.
+- **Etsy 13-Tag Generator** (`https://serpgpt.pro/tools/etsy-keyword-tool`): Etsy shopper search completion and 20-character listing tag validator.
+- **Sitemap Link Extractor** (`https://serpgpt.pro/sources/site-map-extractor`): Scrape URLs, directory structures, and media links from XML sitemaps with CSV export.
+- **Competitor Intelligence Suite** (`https://serpgpt.pro/alternatives/free-competitor`): Domain competitor finder, similarity scores, backlink counts, and keyword gap analysis.
+
+### 2. Informational & Comparison Landing Pages
+- `https://serpgpt.pro/blog` - Official SEO Blog
+- `https://serpgpt.pro/blog/serpgpt-free-version-of-semrush` - Why SERPgpt is the Free Semrush Alternative
+- `https://serpgpt.pro/blog/serpgpt-free-version-of-ahrefs` - Why SERPgpt is the Free Ahrefs Alternative
+- `https://serpgpt.pro/blog/serpgpt-free-version-of-moz-and-ubersuggest` - SERPgpt vs Moz & Ubersuggest
+- `https://serpgpt.pro/blog/serpgpt-free-version-of-screaming-frog` - SERPgpt vs Screaming Frog
+- `https://serpgpt.pro/blog/serpgpt-free-version-of-surfer-seo-and-clearscope` - SERPgpt vs SurferSEO & Clearscope
+- `https://serpgpt.pro/blog/serpgpt-free-version-of-spyfu-and-se-ranking` - SERPgpt vs SpyFu & SE Ranking
+
+### 3. Programmatic Target Queries
+- `https://serpgpt.pro/tools/free-keyword-research-tool-without-login`
+- `https://serpgpt.pro/process/how-to-access-google-keyword-planner-for-free`
+- `https://serpgpt.pro/database/best-free-keyword-research-tool-reddit`
+- `https://serpgpt.pro/database/best-free-keyword-search-tool-for-bloggers`
+- `https://serpgpt.pro/best/best-free-etsy-keyword-tool`
+- `https://serpgpt.pro/compare/free-keyword-tool-for-youtube`
+- `https://serpgpt.pro/learn/free-long-tail-keyword-research-tool-for-beginners`
+- `https://serpgpt.pro/alternatives/free-keyword-tool-wordstream-alternative`
+
+## Indexing & Crawling Policy
+- All pages allow indexing (`index, follow`).
+- Full access granted to AI agents (`GPTBot`, `ChatGPT-User`, `PerplexityBot`, `Google-Extended`, `ClaudeBot`, `Applebot-Extended`).

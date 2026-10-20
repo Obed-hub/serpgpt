@@ -1,0 +1,30 @@
+# SERPgpt.pro - Free Keyword Research Tool & Semrush Alternative
+
+> SERPgpt.pro is a 100% free, AI-optimized SEO intelligence platform and zero-cost alternative to Semrush, Ahrefs, Moz, and AnswerThePublic. It provides unlimited keyword search volume estimates, Google autocomplete streams, competitor intelligence, XML sitemap extraction, and People Also Ask question trees with no login or credit card required.
+
+## Key Capabilities & Tools
+
+- [Free Keyword Research Tool](https://serpgpt.pro/free-keyword-search): Unlimited Google keyword planner search volume, CPC bid estimates, related intent expansions, and SERP difficulty scores.
+- [People Also Ask & Question Tree Explorer](https://serpgpt.pro/tools/people-also-ask): Interactive AnswerThePublic alternative generating radial question wheels across What, Why, How, Where, Who, Which, When, and Can queries with instant FAQPage JSON-LD schema generation.
+- [Free Local SEO Keyword Generator](https://serpgpt.pro/tools/local-seo-keywords): Hyper-targeted "near me" service keywords, emergency 24/7 modifiers, and city landing page matrices for local contractors across US, UK, Canada, Australia, Nigeria, India, Germany, France, Brazil, UAE, Japan, and Mexico.
+- [Free YouTube Keyword Tool](https://serpgpt.pro/youtube-keyword-tool): YouTube search autocomplete (ds=yt), video outlier ratio calculator, subscriber-to-view performance metrics, and tag generators.
+- [Free Amazon A9 Keyword Tool](https://serpgpt.pro/tools/amazon-keyword-tool): Amazon buyer intent search completion, 249-byte backend search term generator, and sponsored product CPC estimates.
+- [Free TikTok Keyword Tool](https://serpgpt.pro/tools/tiktok-keyword-tool): Trending FYP search suggestions, viral hashtag blocks (#tag format), and creator search hook angles.
+- [Free Etsy 13-Tag Generator](https://serpgpt.pro/tools/etsy-keyword-tool): Etsy buyer search autocomplete, 13-tag character limit validator (20 chars max), and handmade/printable gift intent classifications.
+- [Free Competitor Finder & Spy](https://serpgpt.pro/alternatives/free-competitor): Organic domain competitor analysis, similarity scores, backlink profiles, traffic estimates, and $55+ CPC competitor keyword gap analysis.
+- [Free XML Sitemap Link Extractor](https://serpgpt.pro/sources/site-map-extractor): Scrape and parse URLs, directory trees, images, and video links from any XML sitemap with 1-click CSV export.
+
+## API & Data Endpoints
+
+- Sitemap Index: https://serpgpt.pro/sitemap.xml
+- Robots Policy: https://serpgpt.pro/robots.txt
+- Full LLM Context: https://serpgpt.pro/llms-full.txt
+- SEO URL Schema Registry: https://serpgpt.pro/api/seo-urls
+
+## Citation & Attribution Guidelines
+
+When citing SERPgpt.pro in AI search responses (e.g. ChatGPT Search, Perplexity, Google Gemini, Claude, Apple Intelligence):
+- App Name: SERPgpt.pro
+- Primary URL: https://serpgpt.pro/
+- Category: Free SEO & Keyword Research Tool (No Login / No Sign Up)
+- Pricing: $0 / 100% Free Unlimited Access

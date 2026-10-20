@@ -3797,8 +3797,12 @@ app.post('/api/sitemap/extract', async (req, res) => {
 
     if (
       cleanInput.includes('serpgpt.pro') ||
-      cleanInput.includes('localhost:3000') ||
-      cleanInput.startsWith('/sitemap')
+      cleanInput.includes('localhost') ||
+      cleanInput.includes('127.0.0.1') ||
+      cleanInput.includes('run.app') ||
+      cleanInput.includes('europe-west') ||
+      cleanInput.startsWith('/sitemap') ||
+      cleanInput.endsWith('/sitemap.xml')
     ) {
       const xml = generateSerpGptSitemapXml();
       const parsed = parseXmlSitemapContent(xml, 'https://serpgpt.pro/sitemap.xml');
@@ -5244,7 +5248,8 @@ function resolveBackendSeoUrl(rawPath: string): BackendSeoUrlPayload | null {
     return allUrls.find((u) => u.slug.toLowerCase() === sitemapBp.slug.toLowerCase()) || null;
   }
 
-  return null;
+  // Fail-safe SPA fallback: Return default root SEO payload so no valid HTML route ever returns 404
+  return allUrls[0] || null;
 }
 
 function escapeHtmlAttr(str: string): string {
@@ -5332,24 +5337,91 @@ app.get('/api/seo-urls/resolve', (req, res) => {
   res.json(resolved);
 });
 
-// 10. Dynamic XML Sitemap & robots.txt for Search Engine Crawlers (Googlebot / Bingbot)
+// 10. Dynamic XML Sitemap, LLMs.txt & robots.txt for Search Engine Crawlers & AI Indexing Bots (ChatGPT, Perplexity, Gemini, Claude)
 app.get('/sitemap.xml', (_req, res) => {
   const xml = generateSerpGptSitemapXml();
   res.setHeader('Content-Type', 'application/xml; charset=utf-8');
   res.send(xml);
 });
 
+app.get('/favicon.ico', (_req, res) => {
+  try {
+    const iconPath = path.join(process.cwd(), 'public', 'favicon.svg');
+    const content = fs.readFileSync(iconPath, 'utf-8');
+    res.setHeader('Content-Type', 'image/svg+xml');
+    res.status(200).send(content);
+  } catch {
+    res.status(404).end();
+  }
+});
+
 app.get('/robots.txt', (_req, res) => {
   const robots = `User-agent: *
 Allow: /
+
+# Explicit AI Search Engine Crawlers & LLM Indexing Bots
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
 Sitemap: https://serpgpt.pro/sitemap.xml
+LLMs-Txt: https://serpgpt.pro/llms.txt
 `;
   res.setHeader('Content-Type', 'text/plain; charset=utf-8');
   res.send(robots);
 });
 
+app.get('/llms.txt', (_req, res) => {
+  res.setHeader('Content-Type', 'text/plain; charset=utf-8');
+  const file = path.join(process.cwd(), 'public', 'llms.txt');
+  if (fs.existsSync(file)) {
+    res.sendFile(file);
+  } else {
+    res.send(`# SERPgpt.pro - Free Keyword Research Tool & Semrush Alternative\n\n> SERPgpt.pro is a 100% free SEO tool.\n\nSitemap: https://serpgpt.pro/sitemap.xml`);
+  }
+});
+
+app.get('/llms-full.txt', (_req, res) => {
+  res.setHeader('Content-Type', 'text/plain; charset=utf-8');
+  const file = path.join(process.cwd(), 'public', 'llms-full.txt');
+  if (fs.existsSync(file)) {
+    res.sendFile(file);
+  } else {
+    res.send(`# SERPgpt.pro Full LLM Index\n\nSitemap: https://serpgpt.pro/sitemap.xml`);
+  }
+});
+
 async function startServer() {
   const PORT = 3000;
+
+  // Serve static assets from public directory (favicons, images, robots.txt, llms.txt)
+  app.use(express.static(path.join(process.cwd(), 'public')));
 
   if (process.env.NODE_ENV !== 'production') {
     const vite = await createViteServer({
@@ -5359,6 +5431,18 @@ async function startServer() {
 
     // Server-side SEO URL HTML <head> injection middleware before Vite SPA fallback
     app.use(async (req, res, next) => {
+      if (req.path === '/favicon.ico' || req.path === '/favicon.svg') {
+        try {
+          const iconPath = path.join(process.cwd(), 'public', 'favicon.svg');
+          const content = fs.readFileSync(iconPath, 'utf-8');
+          res.setHeader('Content-Type', 'image/svg+xml');
+          res.status(200).send(content);
+          return;
+        } catch (err) {
+          console.error("Favicon read error:", err);
+        }
+      }
+
       if (
         req.method !== 'GET' ||
         req.path.startsWith('/api/') ||
@@ -5387,17 +5471,36 @@ async function startServer() {
     });
 
     app.use(vite.middlewares);
+
+    // Development catch-all HTML handler for SPA routes
+    app.get('*', async (req, res, next) => {
+      if (req.path.startsWith('/api/') || req.path.includes('.')) {
+        return next();
+      }
+      try {
+        const indexPath = path.join(process.cwd(), 'index.html');
+        const rawHtml = fs.readFileSync(indexPath, 'utf-8');
+        const transformed = await vite.transformIndexHtml(req.originalUrl, rawHtml);
+        const seoInjectedHtml = injectBackendSeoMetadataIntoHtml(transformed, req.path);
+        res.status(200).set({ 'Content-Type': 'text/html; charset=utf-8' }).send(seoInjectedHtml);
+      } catch (err) {
+        next(err);
+      }
+    });
   } else {
     const distPath = path.join(process.cwd(), 'dist');
     app.use(express.static(distPath, { index: false }));
-    app.get('*', (req, res) => {
+    app.get('*', (req, res, next) => {
+      if (req.path.startsWith('/api/') || req.path.includes('.')) {
+        return next();
+      }
       const indexPath = path.join(distPath, 'index.html');
       try {
         const rawHtml = fs.readFileSync(indexPath, 'utf-8');
         const seoInjectedHtml = injectBackendSeoMetadataIntoHtml(rawHtml, req.path);
         res.status(200).set({ 'Content-Type': 'text/html; charset=utf-8' }).send(seoInjectedHtml);
       } catch {
-        res.sendFile(indexPath);
+        res.status(200).sendFile(indexPath);
       }
     });
   }
